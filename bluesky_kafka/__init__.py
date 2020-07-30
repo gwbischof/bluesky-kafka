@@ -470,8 +470,8 @@ class BlueskyConsumer:
             f"Run consumption complete: {stop_doc['run_start']}, "
             f"{self._topics}, {self._group_id}"
         )
-        #if self._commit_on_stop_doc:
-        #    self.commit(asynchronous=False)
+        if self._commit_on_stop_doc:
+            self._consumer.commit(asynchronous=False)
 
 
 
